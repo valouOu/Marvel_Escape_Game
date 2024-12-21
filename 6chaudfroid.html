@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaud/Froid</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input {
+      padding: 10px;
+      margin: 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #00ff00;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Devinez le chiffre !</h1>
+  <p>Essayez de deviner le chiffre entre 1 et 100.</p>
+
+  <input type="number" id="userGuess" placeholder="Entrez un chiffre" min="1" max="100">
+  <button onclick="checkGuess()">Valider</button>
+
+  <p id="message"></p>
+
+  <script>
+    const secretNumber = Math.floor(Math.random() * 100) + 1; // Génère un chiffre entre 1 et 100
+
+    function checkGuess() {
+      const userGuess = parseInt(document.getElementById("userGuess").value);
+      const messageElement = document.getElementById("message");
+
+      if (userGuess === secretNumber) {
+        messageElement.textContent = "Bravo, vous avez trouvé le bon chiffre !";
+        messageElement.style.color = "lime";
+        setTimeout(() => {
+          window.location.href = "7puzzle.html"; // Rediriger vers la prochaine épreuve
+        }, 2000);
+      } else if (userGuess > secretNumber) {
+        messageElement.textContent = "Trop grand, essayez plus petit.";
+        messageElement.style.color = "red";
+      } else {
+        messageElement.textContent = "Trop petit, essayez plus grand.";
+        messageElement.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

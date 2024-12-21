@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rébus</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .rebus {
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Résoudre le Rébus</h1>
+  <p class="rebus">MC + U + T</p> <!-- Exemple de rébus pour "MUTANT" -->
+  <input type="text" id="answer" placeholder="Entrez votre réponse">
+  <button onclick="checkAnswer()">Valider</button>
+
+  <script>
+    function checkAnswer() {
+      const correctAnswer = "MUTANT";
+      const userAnswer = document.getElementById("answer").value.trim().toUpperCase();
+      
+      if (userAnswer === correctAnswer) {
+        alert("Bonne réponse !");
+        window.location.href = "end.html"; // Redirection vers la page de fin
+      } else {
+        alert("Mauvaise réponse, essayez encore.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .puzzle {
+      width: 400px;
+      height: 400px;
+      background-image: url('puzzle.jpg');
+      background-size: 200% 200%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Résoudre le puzzle</h1>
+  <div class="puzzle" onclick="solvePuzzle()"></div>
+
+  <script>
+    function solvePuzzle() {
+      alert("Puzzle résolu ! Vous passez à l'épreuve suivante.");
+      window.location.href = "8quiz.html"; // Rediriger vers la prochaine épreuve
+    }
+  </script>
+</body>
+</html>

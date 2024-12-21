@@ -1,0 +1,116 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal de Détresse</title>
+    <style>
+      body {
+        background-color: #000; /* Fond noir */
+        color: #00ff00; /* Texte vert style "terminal" */
+        font-family: monospace;
+        text-align: center;
+        padding: 20px;
+      }
+      .text {
+        font-size: 18px;
+      }
+      .timer {
+        font-size: 24px;
+        color: red;
+        margin-top: 20px;
+      }
+      .time-up {
+        color: red;
+        font-size: 22px;
+        display: none;
+      }
+      .input-area {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .input-area input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid white;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+    }
+    .input-area button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00ff00;
+      color: black;
+      cursor: pointer;
+    }
+    .input-area button:hover {
+      background-color: #00cc00;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Signal Intercepté</h1>
+    <p class="text">Nick Fury a intercepté un message de l'Hydra... mais il est incomplet. Vous devez enquêter.</p>
+    <p class="text">Il n'y a rien ici, peut-être devriez-vous chercher ailleurs ?</p>
+  
+    <div class="timer">Temps restant : <span id="countdown">60</span> secondes</div>
+    <p id="timeUpMessage" class="time-up">Temps écoulé ! Mission échouée.</p>
+
+    <div class="input-area">
+      <input type="text" id="answerInput" placeholder="Entrez le mot trouvé ici">
+      <button onclick="checkAnswer()">Valider</button>
+    </div>
+
+    <p id="message" class="message"></p>
+  
+    <!-- Mot de passe : Tuez tous les Avengers -->
+  
+    <script>
+      // Chronomètre
+      let timeLeft = 60; // Temps en secondes
+      const countdownElement = document.getElementById("countdown");
+      const timeUpMessage = document.getElementById("timeUpMessage");
+  
+      const timer = setInterval(() => {
+        if (timeLeft > 0) {
+          timeLeft--; // Réduction du temps
+          countdownElement.textContent = timeLeft; // Mise à jour de l'affichage
+        } else {
+          clearInterval(timer); // Arrête le chronomètre
+          timeUpMessage.style.display = "block"; // Affiche "Temps écoulé"
+          setTimeout(() => {
+            window.location.href = "_intro.html"; // Remplace "enigme2.html" par l'URL de la prochaine épreuve
+          }, 2000);
+        }
+      }, 1000); // Mise à jour chaque seconde
+
+    function checkAnswer() {
+      const correctAnswer = "Tuez tous les Avengers"; // Réponse correcte
+      const userAnswer = document.getElementById("answerInput").value.trim(); // Récupérer la réponse de l'utilisateur
+
+      const messageElement = document.getElementById("message");
+
+      if (userAnswer === correctAnswer) {
+        messageElement.textContent = "Bravo ! Nick Fury savait qu'il pouvait compter sur toi !";
+        messageElement.style.color = "lime"; // Message vert
+
+        // Redirection vers la page suivante après une courte pause
+        setTimeout(() => {
+          window.location.href = "2ScarletWitch.html";
+        }, 2000); // Pause de 2 secondes pour lire le message avant de rediriger
+        
+      } else {
+        console.log(userAnswer);
+        messageElement.textContent = "Erreur. Essayez encore.";
+        messageElement.style.color = "red"; // Message rouge
+      }
+    }
+  </script>
+</body>
+</html>
+  
+  

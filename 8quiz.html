@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Marvel - Infinity Saga</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+      color: #00ff00;
+    }
+
+    .quiz-container,
+    .final-question {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .answers label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .submit-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: black;
+      background-color: #00ff00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #00cc00;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 24px;
+      color: #00ff00;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Quiz Marvel - Infinity Saga</h1>
+  <div class="quiz-container" id="quiz">
+    <form id="quiz-form">
+      <!-- Questions du quiz -->
+      <div class="question">
+        <p>1. Quel métal compose le bouclier de Captain America ?</p>
+        <div class="answers">
+          <label><input type="radio" name="q1" value="a"> a) Vibranium</label>
+          <label><input type="radio" name="q1" value="b"> b) Adamantium</label>
+          <label><input type="radio" name="q1" value="c"> c) Uru</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>2. Qui est le méchant principal dans The Avengers (2012) ?</p>
+        <div class="answers">
+          <label><input type="radio" name="q2" value="a"> a) Loki</label>
+          <label><input type="radio" name="q2" value="b"> b) Thanos</label>
+          <label><input type="radio" name="q2" value="c"> c) Ultron</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>3.Dans Iron Man, quel est le nom de la société de Tony Stark ?</p>
+        <div class="Answers">
+          <label><input type="radio" name="q3" value="a"> a) Stark Industries</label>
+          <label><input type="radio" name="q3" value="b"> b) Stark Enterprises</label>
+          <label><input type="radio" name="q3" value="c"> c) Stark Tech</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>4. Comment Steve Rogers devient-il Captain America ?</p>
+        <div class="Answers">
+          <label><input type="radio" name="q3" value="a"> a) Par un sérum expérimental</label>
+          <label><input type="radio" name="q3" value="b"> b) Par une exposition aux rayons gamma</label>
+          <label><input type="radio" name="q3" value="c"> c) En portant une armure high-tech</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>5. Quel est le nom de l'arme principale de Thor ?</p>
+        <div class="Answers">
+          <label><input type="radio" name="q3" value="a"> a) Mjölnir</label>
+          <label><input type="radio" name="q3" value="b"> b) Stormbreaker</label>
+          <label><input type="radio" name="q3" value="c"> c) Gungnir</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>6. Quel personnage trouve la Pierre de l'Esprit dans Avengers: Age of Ultron ?</p>
+        <div class="Answers">
+          <label><input type="radio" name="q3" value="a"> a) Ultron</label>
+          <label><input type="radio" name="q3" value="b"> b) Vision</label>
+          <label><input type="radio" name="q3" value="c"> c) Iron Man</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>7. Qui détruit la Pierre de Pouvoir dans Gardiens de la Galaxie ?
+        </p>
+        <div class="Answers">
+          <label><input type="radio" name="q3" value="a"> a) Personne, elle n'est pas détruite</label>
+          <label><input type="radio" name="q3" value="b"> b) Star-Lord</label>
+          <label><input type="radio" name="q3" value="c"> c) Ronan</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>8. Quel est le véritable nom de Black Widow ?</p>
+        <div class="Answers">
+          <label><input type="radio" name="q3" value="a"> a) Natasha Romanoff</label>
+          <label><input type="radio" name="q3" value="b"> b) Wanda Maximoff</label>
+          <label><input type="radio" name="q3" value="c"> c) Maria Hill</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>9. Dans Doctor Strange, comment Stephen Strange apprend-il la magie ?</p>
+        <div class="Answers">
+          <label><input type="radio" name="q3" value="a"> a) En étudiant au Kamar-Taj</label>
+          <label><input type="radio" name="q3" value="b"> b) En absorbant le savoir d'un ancien livre</label>
+          <label><input type="radio" name="q3" value="c"> c) En héritant d'une relique mystique</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>10. Qui est le premier héros recruté par Nick Fury dans l'initiative Avengers ?</p>
+        <div class="Answers">
+          <label><input type="radio" name="q3" value="a"> a) Iron Man</label>
+          <label><input type="radio" name="q3" value="b"> b) Captain Marvel</label>
+          <label><input type="radio" name="q3" value="c"> c) Captain America</label>
+        </div>
+      </div>
+      <button type="button" class="submit-button" onclick="submitQuiz()">Valider</button>
+    </form>
+  </div>
+
+  <!-- Question finale -->
+  <div class="final-question" id="final-question" style="display: none;">
+    <h2>Question Finale</h2>
+    <p>Quel est le nom complet de l'accord signé pour réguler les activités des Avengers dans Captain America: Civil War
+      ?</p>
+    <div class="answers">
+      <label><input type="radio" name="final" value="a"> a) Les Accords de Sokovie</label>
+      <label><input type="radio" name="final" value="b"> b) Les Accords de Genève</label>
+      <label><input type="radio" name="final" value="c"> c) Les Accords de Wakanda</label>
+    </div>
+    <button type="button" class="submit-button" onclick="submitFinal()">Valider</button>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    // Clés pour les bonnes réponses
+    const correctAnswers = {
+      q1: "a",
+      q2: "a",
+      // Ajoute les bonnes réponses des autres questions ici
+    };
+
+    // Vérifie les réponses du quiz principal
+    function submitQuiz() {
+      let score = 0;
+      const form = document.getElementById("quiz-form");
+      const formData = new FormData(form);
+
+      // Vérifie chaque question
+      for (let [key, value] of formData.entries()) {
+        if (correctAnswers[key] === value) {
+          score++;
+        }
+      }
+
+      if (score >= 8) {
+        document.getElementById("result").innerText = `Félicitations ! Vous avez obtenu ${score}/10. Vous passez à l'épreuve suivante !`;
+        // Redirige vers l'épreuve suivante après un court délai
+        setTimeout(() => {
+          window.location.href = "9rebus.html"; // Change le lien vers l'épreuve suivante
+        }, 3000);
+      } else if (score >= 6) {
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("final-question").style.display = "block";
+      } else {
+        document.getElementById("result").innerText = `Vous avez obtenu ${score}/10. Réessayez le quiz pour avancer.`;
+      }
+    }
+
+    // Vérifie la réponse à la question finale
+    function submitFinal() {
+      const finalAnswer = document.querySelector('input[name="final"]:checked');
+      if (finalAnswer && finalAnswer.value === "a") {
+        document.getElementById("result").innerText = "Bravo ! Vous avez répondu correctement à la question finale. Vous passez à l'épreuve suivante !";
+        setTimeout(() => {
+          window.location.href = "9rebus.html"; // Change le lien vers l'épreuve suivante
+        }, 3000);
+      } else {
+        document.getElementById("result").innerText = "Mauvaise réponse. Vous devez refaire le quiz.";
+        setTimeout(() => {
+          window.location.reload(); // Recharge la page pour recommencer le quiz
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+
+</html>

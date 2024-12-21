@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illusion de Scarlet Witch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: black; /* Fond général sombre */
+      color: white; /* Texte général en blanc */
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+    }
+    .hidden-area {
+      background-color: black; /* Fond rouge */
+      color: black; /* Texte rouge */
+      position: absolute;
+      bottom: 200px;
+      right: 50px;
+    }
+    .hidden-text {
+      font-size: 22px;
+    }
+    .space {
+      height: calc(100vh - 200px);
+    }
+    .input-area {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .input-area input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid white;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+    }
+    .input-area button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00ff00;
+      color: black;
+      cursor: pointer;
+    }
+    .input-area button:hover {
+      background-color: #00cc00;
+    }
+    .message {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    /* Optionnel : Surlignage */
+    .hidden-text::selection {
+      color: white;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Illusion de Scarlet Witch</h1>
+  
+  <div class="hidden-area">
+    <span class="hidden-text">
+      LIBERTAS
+    </span>
+  </div>
+
+  <div class="space">
+
+  </div>
+
+  <div class="input-area">
+    <input type="text" id="answerInput" placeholder="Entrez le mot trouvé ici">
+    <button onclick="checkAnswer()">Valider</button>
+  </div>
+
+  <p id="message" class="message"></p>
+
+  <!-- Sons -->
+  <audio id="successSound" src="success.mp3"></audio>
+  <audio id="errorSound" src="error.mp3"></audio>
+
+  <script>
+    function checkAnswer() {
+      const correctAnswer = "LIBERTAS"; // Réponse correcte
+      const userAnswer = document.getElementById("answerInput").value.trim().toUpperCase(); // Récupérer la réponse de l'utilisateur
+
+      const messageElement = document.getElementById("message");
+      const successSound = document.getElementById("successSound");
+      const errorSound = document.getElementById("errorSound");
+
+      if (userAnswer === correctAnswer) {
+        successSound.play(); // Joue le son de réussite
+        messageElement.textContent = "Bravo ! Vous avez brisé l'illusion de Scarlet Witch.";
+        messageElement.style.color = "lime"; // Message vert
+
+        // blackirection vers la page suivante après une courte pause
+        setTimeout(() => {
+          window.location.href = "3decrypterleparchemin.html";
+        }, 2000); // Pause de 2 secondes pour lire le message avant de blackiriger
+
+      } else {
+        errorSound.play(); // Joue le son d'échec
+        messageElement.textContent = "Erreur. Essayez encore.";
+        messageElement.style.color = "black"; // Message rouge
+      }
+    }
+  </script>
+</body>
+</html>
